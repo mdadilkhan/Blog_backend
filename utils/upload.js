@@ -26,7 +26,7 @@ const storage=new GridFsStorage({
       console.log("??",request);
       console.log("?>>?",file); 
         const match=["image/png","image/jpg"];
-          if(match.indexOf(file.memeType) === -1){
+          if(match.indexOf(file.mimeType) === -1){
             return `${Date.now()}-blogX-${file.originalname}`;
           }
           return {
