@@ -9,8 +9,8 @@ export const authenticateToken = (request, response, next) => {
   console.log("authHeader>>>",authHeader);
   console.log("substring>>>",authHeader.substring(7, authHeader.length));
 
-  const token = authHeader.substring(7, authHeader.length);
-  
+  const token = authHeader.substring(6, authHeader.length);
+//  const token = authHeader.split(" ")[1];  
   console.log("token>>>",token);
   
   if (token == null) {
