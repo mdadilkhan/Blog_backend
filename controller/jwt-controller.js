@@ -3,15 +3,15 @@ import env from "dotenv";
 
 env.config();
 
-console.log("secretKey",process.env.ACCESS_SECRET_KEY);
+// console.log("secretKey",process.env.ACCESS_SECRET_KEY);
 export const authenticateToken = (request, response, next) => {
   const authHeader = request.headers['authorization'];
-  console.log("authHeader>>>",authHeader);
-  console.log("substring>>>",authHeader.substring(7, authHeader.length));
+  // console.log("authHeader>>>",authHeader);
+  // console.log("substring>>>",authHeader.substring(7, authHeader.length));
 
   const token = authHeader.substring(6, authHeader.length);
 //  const token = authHeader.split(" ")[1];  
-  console.log("token>>>",token);
+  // console.log("token>>>",token);
   
   if (token == null) {
     return response.status(401).json({ msg: "token is missing" });
