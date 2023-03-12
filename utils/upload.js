@@ -25,7 +25,7 @@ const storage=new GridFsStorage({
      file:(request,file)=>{
       console.log("??",request);
       console.log("?>>?",file); 
-        const match=["image/png","image/jpg"];
+        const match=["image/png","image/jpg","image/jpeg"];
           if(match.indexOf(file.mimeType) === -1){
             return `${Date.now()}-blogX-${file.originalname}`;
           }
