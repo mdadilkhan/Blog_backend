@@ -40,4 +40,4 @@ export const getImage= async (request,response)=>{
     return response.status(500).json({msg:error.message})
    }
 }
-
+     
