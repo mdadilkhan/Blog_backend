@@ -18,7 +18,7 @@ export const signupUser= async (request,response) => {
         }
 
         // const user=request.body;
-        // console.log("user>>",user,hashedPassword);
+       
         const newUser=new User(user);
         
        await newUser.save(); 
@@ -26,7 +26,7 @@ export const signupUser= async (request,response) => {
         
         return response.status(200).json({msg:"signup successfull"})
     } catch (error) {
-        console.log("err>>",error);
+       
         return response.status(500).json({msg:"error while signup"})
     }
 }

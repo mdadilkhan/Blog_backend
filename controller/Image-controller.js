@@ -19,7 +19,7 @@ conn.once('open',()=>{
 
 export  const uploadImage=(request,response)=>{
 
-    console.log("request",request);
+
     //file must exist if not return from here
     if(!request.file){
         return response.status(404).json({msg:"File not found"});

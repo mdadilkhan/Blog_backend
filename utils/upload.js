@@ -23,8 +23,7 @@ const storage=new GridFsStorage({
      url: `mongodb+srv://${username}:${password}@blog-app.hupr1o3.mongodb.net/${database}?retryWrites=true&w=majority`,
      options:{useNewUrlParser:true},
      file:(request,file)=>{
-      console.log("??",request);
-      console.log("?>>?",file); 
+ 
         const match=["image/png","image/jpg","image/jpeg"];
           if(match.indexOf(file.mimeType) === -1){
             return `${Date.now()}-blogX-${file.originalname}`;

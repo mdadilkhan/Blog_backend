@@ -27,8 +27,11 @@ mongoose.set('strictQuery', false);//for deprication handle
 const username = process.env.MONGO_DB_USER;
 const password = process.env.MONGO_DB_PASSWORD;
 const database = process.env.MONGO_DB_DATABASE;
+
+const PORT=process.env.PORT || 8000;
+
 Connection(username, password, database);
-app.listen(process.env.PORT, () => console.log(`Server is running successfully on PORT ${process.env.PORT}`));
+app.listen(PORT, () => console.log(`Server is running successfully on PORT ${process.env.PORT}`));
 
 
 
