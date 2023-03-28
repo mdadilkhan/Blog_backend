@@ -29,6 +29,7 @@ export  const uploadImage=(request,response)=>{
     // if file exist middleware will upload bedore uploadImage function called from route page
     // and we need to return image url 
     const imageUrl=`${url}/file/${request.file.filename}`;
+    console.log(imageUrl);
     return response.status(200).json(imageUrl);
 } 
 
@@ -36,6 +37,7 @@ export  const uploadImage=(request,response)=>{
 export const getImage= async (request,response)=>{
    try {
       const file = await gfs.files.findOne({filename:request.params.filename});
+      console.log(file);
       const readStream= gridfsBucket.openDownloadStream(file._id);
       readStream.pipe(response);
    } catch (error) {
